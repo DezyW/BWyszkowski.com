@@ -1,0 +1,80 @@
+/* Global layout and reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f1e7; /* light parchment tone */
+  color: #1c1c1c;
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Header and navigation */
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3b3b3b;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #888;
+}
+
+/* Main content */
+main {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  margin-top: 3rem;
+}
+
+/* Markdown-specific styles (used later when rendering articles) */
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+article a {
+  color: #2f3e6c;
+  text-decoration: underline;
+}
+
+article a:hover {
+  color: #1a2546;
+}

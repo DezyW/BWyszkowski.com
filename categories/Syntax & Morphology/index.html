@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syntax & Morphology</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Syntax & Morphology</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="article-list">
+    <p>Loading articles...</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Linguistics Blog</p>
+  </footer>
+
+  <script>
+    const categoryPath = "/categories/Syntax & Morphology/";
+
+    const articles = [
+      "Introduction to Polish Clauses"
+    ];
+
+    async function loadArticles() {
+      const container = document.getElementById("article-list");
+      container.innerHTML = "";
+
+      for (const folder of articles) {
+        if (!folder) continue; // Skip empty folders
+
+        const encodedCategory = encodeURIComponent("Syntax & Morphology");
+        const encodedFolder = encodeURIComponent(folder);
+
+        const url = `/categories/${encodedCategory}/${encodedFolder}/article.md`;
+        const link = `/categories/${encodedCategory}/${encodedFolder}/`;
+
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("Missing article.md");
+          const text = await res.text();
+
+          const lines = text.split("\n");
+          const titleLine = lines.find(line => line.startsWith("#")) || folder;
+          const title = titleLine.replace(/^#+\s*/, "");
+          const preview = text
+            .replace(/^#.*\n/, "")
+            .replace(/\!\[.*\]\(.*\)/g, "")
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+            .replace(/\*\*|__|\*/g, "")
+            .split(/\s+/)
+            .slice(0, 40)
+            .join(" ") + "...";
+
+          const articleEl = document.createElement("section");
+          articleEl.innerHTML = `
+            <h2><a href="${link}">${title}</a></h2>
+            <p>${preview}</p>
+          `;
+
+          container.appendChild(articleEl);
+        } catch (err) {
+          console.error("Failed to load", folder, err);
+        }
+      }
+    }
+
+    loadArticles();
+  </script>
+</body>
+</html>

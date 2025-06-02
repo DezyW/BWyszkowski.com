@@ -19,32 +19,32 @@
   <footer><p>&copy; 2025 My Linguistics Blog</p></footer>
 
   <script>
-    const articles = ["Introduction to Polish Clauses"];
+    const folders   = ["Introduction to Polish Clauses"];
     const container = document.getElementById("article-list");
 
     async function loadArticles () {
       container.innerHTML = "";
 
-      for (const folder of articles) {
-        const encFld = encodeURIComponent(folder);
-
-        const mdURL  = `./${encFld}/article.md`;
-        const pageURL = `./${encFld}/`;
+      for (const folder of folders) {
+        const enc = encodeURIComponent(folder);
+        const mdURL  = `./${enc}/article.md`;
+        const pageURL = `./${enc}/`;
 
         try {
-          const mdText  = await (await fetch(mdURL)).text();
+          const md = await (await fetch(mdURL)).text();
+          const title = (md.match(/^#+\s*(.*)$/m) || [,""])[1] || folder;
 
-          const title = (mdText.match(/^#+\s*(.*)$/m) || [,""])[1] || folder;
-
-          const tmp = document.createElement("div");
-          tmp.innerHTML = marked.parse(mdText);       // md → html
-          const plain = tmp.textContent || tmp.innerText;
+          const plain = (() => {
+            const tmp = document.createElement("div");
+            tmp.innerHTML = marked.parse(md);
+            return tmp.textContent || tmp.innerText;
+          })();
           const preview = plain.split(/\s+/).slice(0, 40).join(" ") + "…";
 
-          const sec = document.createElement("section");
-          sec.innerHTML =
-            `<h2><a href="${pageURL}">${title}</a></h2><p>${preview}</p>`;
-          container.appendChild(sec);
+          container.insertAdjacentHTML(
+            "beforeend",
+            `<section><h2><a href="${pageURL}">${title}</a></h2><p>${preview}</p></section>`
+          );
         } catch (err) {
           console.error("Failed to load", folder, err);
         }

@@ -4,70 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Syntax & Morphology</title>
-  <link rel="stylesheet" href="/style.css" />
+
+  <link rel="icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../style.css" />
+  <script src="../../lib/marked.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>Syntax & Morphology</h1>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-      </ul>
-    </nav>
+    <h1>Syntax &amp; Morphology</h1>
+    <nav><ul><li><a href="../../">Home</a></li></ul></nav>
   </header>
 
-  <main id="article-list">
-    <p>Loading articles...</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 My Linguistics Blog</p>
-  </footer>
+  <main id="article-list"><p>Loading articles…</p></main>
+  <footer><p>&copy; 2025 My Linguistics Blog</p></footer>
 
   <script>
-    const categoryPath = "/categories/Syntax & Morphology/";
+    const folders   = ["Introduction to Polish Clauses"];
+    const container = document.getElementById("article-list");
 
-    const articles = [
-      "Introduction to Polish Clauses"
-    ];
-
-    async function loadArticles() {
-      const container = document.getElementById("article-list");
+    async function loadArticles () {
       container.innerHTML = "";
 
-      for (const folder of articles) {
-        if (!folder) continue; // Skip empty folders
-
-        const encodedCategory = encodeURIComponent("Syntax & Morphology");
-        const encodedFolder = encodeURIComponent(folder);
-
-        const url = `/categories/${encodedCategory}/${encodedFolder}/article.md`;
-        const link = `/categories/${encodedCategory}/${encodedFolder}/`;
+      for (const folder of folders) {
+        const enc = encodeURIComponent(folder);
+        const mdURL  = `./${enc}/article.md`;
+        const pageURL = `./${enc}/`;
 
         try {
-          const res = await fetch(url);
-          if (!res.ok) throw new Error("Missing article.md");
-          const text = await res.text();
+          const md = await (await fetch(mdURL)).text();
+          const title = (md.match(/^#+\s*(.*)$/m) || [,""])[1] || folder;
 
-          const lines = text.split("\n");
-          const titleLine = lines.find(line => line.startsWith("#")) || folder;
-          const title = titleLine.replace(/^#+\s*/, "");
-          const preview = text
-            .replace(/^#.*\n/, "")
-            .replace(/\!\[.*\]\(.*\)/g, "")
-            .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-            .replace(/\*\*|__|\*/g, "")
-            .split(/\s+/)
-            .slice(0, 40)
-            .join(" ") + "...";
+          const plain = (() => {
+            const tmp = document.createElement("div");
+            tmp.innerHTML = marked.parse(md);
+            return tmp.textContent || tmp.innerText;
+          })();
+          const preview = plain.split(/\s+/).slice(0, 40).join(" ") + "…";
 
-          const articleEl = document.createElement("section");
-          articleEl.innerHTML = `
-            <h2><a href="${link}">${title}</a></h2>
-            <p>${preview}</p>
-          `;
-
-          container.appendChild(articleEl);
+          container.insertAdjacentHTML(
+            "beforeend",
+            `<section><h2><a href="${pageURL}">${title}</a></h2><p>${preview}</p></section>`
+          );
         } catch (err) {
           console.error("Failed to load", folder, err);
         }

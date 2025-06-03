@@ -4,51 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Linguistics Blog</title>
+
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>My Linguistics Blog</h1>
-    <nav>
-      <ul id="category-list">
-        <!-- Categories will be injected here -->
-      </ul>
-    </nav>
+    <nav><ul id="category-list"></ul></nav>
   </header>
 
   <main>
     <p>Welcome to my research blog where I share articles and thoughts on linguistics. Select a category to explore.</p>
   </main>
 
-  <footer>
-    <p>&copy; 2025 My Linguistics Blog</p>
-  </footer>
+  <footer><p>&copy; 2025 My Linguistics Blog</p></footer>
 
   <script>
-    const categories = [
-      "Syntax & Morphology",
-      "Semantics",
-      "Phonetics"
-    ];
+    const categories  = ["Syntax & Morphology", "Semantics", "Phonetics"];
+    const staticLinks = [{ label: "About Me", url: "about.html" }];
+    const list        = document.getElementById("category-list");
 
-    const staticLinks = [
-      { label: "About Me", url: "about.html" }
-    ];
-
-    const list = document.getElementById("category-list");
-    list.innerHTML = "";
-
-    for (const cat of categories) {
-      const encoded = encodeURIComponent(cat);
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="categories/${encoded}/">${cat}</a>`;
-      list.appendChild(li);
+    for (const name of categories) {
+      list.insertAdjacentHTML(
+        "beforeend",
+        `<li><a href="categories/${encodeURIComponent(name)}/">${name}</a></li>`
+      );
     }
-
-    for (const link of staticLinks) {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${link.url}">${link.label}</a>`;
-      list.appendChild(li);
+    for (const { label, url } of staticLinks) {
+      list.insertAdjacentHTML("beforeend", `<li><a href="${url}">${label}</a></li>`);
     }
   </script>
 </body>

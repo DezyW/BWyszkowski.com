@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Translation</title>
+
+  <link rel="icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../style.css" />
+  <script src="../../lib/marked.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Translation</h1>
+    <nav><ul><li><a href="../../">Home</a></li></ul></nav>
+  </header>
+
+  <main id="article-list"><p>Loading articles…</p></main>
+  <footer><p>&copy; 2025 My Linguistics Blog</p></footer>
+
+  <script>
+    const folders   = ["Article"];
+    const container = document.getElementById("article-list");
+
+    async function loadArticles () {
+      container.innerHTML = "";
+
+      for (const folder of folders) {
+        const enc = encodeURIComponent(folder);
+        const mdURL  = `./${enc}/article.md`;
+        const pageURL = `./${enc}/`;
+
+        try {
+          const md = await (await fetch(mdURL)).text();
+          const title = (md.match(/^#+\s*(.*)$/m) || [,""])[1] || folder;
+
+          const plain = (() => {
+            const tmp = document.createElement("div");
+            tmp.innerHTML = marked.parse(md);
+            return tmp.textContent || tmp.innerText;
+          })();
+          const preview = plain.split(/\s+/).slice(0, 40).join(" ") + "…";
+
+          container.insertAdjacentHTML(
+            "beforeend",
+            `<section><h2><a href="${pageURL}">${title}</a></h2><p>${preview}</p></section>`
+          );
+        } catch (err) {
+          console.error("Failed to load", folder, err);
+        }
+      }
+    }
+
+    loadArticles();
+  </script>
+</body>
+</html>

@@ -9,10 +9,10 @@
 Progressive rock did not begin with King Crimson, but their debut was pivotal—and, much like the lyrics of Dylan and Lennon from the same era, it carried an embedded anti-war message, if not several. The writing of Peter Sinfield is phenomenal; “The Letters”, in particular, is one of my favourites. The cultural and poetic depth of his work poses a challenge even to the most skilled translators.
 <br>
 <br>
-Although I am not a professional translator, but rather a student of translation, I have chosen to render one of his works—"Moonchild"—into Polish, my native language. This rendering, just like the whole website, is part of my bachelor's thesis in translations, in which I analyse renderings of _In the Court of the Crimson King_ by two Polish translators: Tomasz Beksiński (80s-90s) and Tomasz Piwowarek (a much more recent translation). Please feel free to suggest any refinements and your interpretations of the original - I am more than eager to read through your suggestions and comments.
+Although I am not a professional translator, but rather a student of translation, I have chosen to render one of his works—"Moonchild"—into Polish, my native language. This rendering, just like the whole website, is part of my bachelor's thesis in translations, in which I analyse renderings of _In the Court of the Crimson King_ by two Polish translators: Tomasz Beksiński (80s-90s) and Tomasz Piwowarek (a much more recent translation).
 <br>
 <br> 
-First is the original, followed by my take on it.
+First is the original, followed by my take on it. Please feel free to suggest any refinements and your interpretations of the original - I am more than eager to read through your suggestions and comments.
 <br>
 <br>
 **King Crimson – Moonchild**<br>

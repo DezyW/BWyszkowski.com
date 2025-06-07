@@ -44,7 +44,7 @@ First is the original, followed by my take on it. Please feel free to suggest an
 *Tak bardzo samotna*<br>
 *Marzy w cieniu wierzby*<br>
 <br>
-*Jej szept pojmuje pajęczyna z drzew*<br>
+*Jej szept pojmuje drzew pajęczyna*<br>
 *Sypia u podnóża leśnego źródła*<br>
 *Dyryguje nocnym śpiewem słowików*<br>
 *Wyczekując pierwszego promienia o brzasku*<br>

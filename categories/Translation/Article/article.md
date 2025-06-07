@@ -21,14 +21,17 @@ First is the original, followed by my take on it. Please feel free to suggest an
 *Dancing in the shallows of a river*<br>
 *Lonely moonchild*<br>
 *Dreaming in the shadows of the willow*<br>
+<br>
 *Talking to the trees of the cobweb strange*<br>
 *Sleeping on the steps of a fountain*<br>
 *Waving silver wands to the night birds song*<br>
 *Waiting for the sun on the mountain*<br>
+<br>
 *She's a moonchild*<br>
 *Gathering the flowers in a garden*<br>
 *Lovely moonchild*<br>
 *Drifting on the echoes of the hours*<br>
+<br>
 *Sailing on the wind in a milk white gown*<br>
 *Dropping circle stones on a sun dial*<br>
 *Playing hide and seek with the ghosts of dawn*<br>
@@ -40,14 +43,17 @@ First is the original, followed by my take on it. Please feel free to suggest an
 *Pląsa ona w lekkim strumieniu rzeki*<br>
 *Tak bardzo samotna*<br>
 *Marzy w cieniu wierzby*<br>
-*Jej szept uchwyca drzew pajęczyna*<br>
+<br>
+*Jej szept pojmuje pajęczyna z drzew*<br>
 *Sypia u podnóża leśnego źródła*<br>
 *Dyryguje nocnym śpiewem słowików*<br>
 *Wyczekując pierwszego promienia o brzasku*<br>
+<br>
 *Księżycowa córa*<br>
 *Zbiera upadłe płatki kwiatów*<br>
 *Urocze dziecię*<br>
 *Dryfuje po pogłosie minionego czasu*<br>
+<br>
 *W śnieżnobiałej sukni ponosi ją wiatr*<br>
 *Z kamieni układa słoneczny zegar*<br>
 *Bawiąc się w chowanego z duchem jutrzenki*<br>

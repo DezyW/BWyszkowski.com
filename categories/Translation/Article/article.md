@@ -9,7 +9,7 @@
 Progressive rock did not begin with King Crimson, but their debut was pivotal—and, much like the lyrics of Dylan and Lennon from the same era, it carried an embedded anti-war message, if not several. The writing of Peter Sinfield is phenomenal; “The Letters”, in particular, is one of my favourites. The cultural and poetic depth of his work poses a challenge even to the most skilled translators.
 <br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although I am not a professional translator, but rather a student of translation, I have chosen to render one of his works—"Moonchild"—into Polish, my native language.This rendering, just like the whole website, is part of my bachelor's thesis in translations.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although I am not a professional translator, but rather a student of translation, I have chosen to render one of his works—"Moonchild"—into Polish, my native language. This rendering, just like the whole website, is part of my bachelor's thesis in translations.<br>
 <br> 
 First is the original, followed by my take on it.
 <br>
